@@ -1,10 +1,6 @@
 import java.security.SecureRandom;
 import java.util.Scanner;
 
-/**
- * Générateur de mots de passe aléatoires.
- * Permet de créer un mot de passe sécurisé selon des critères choisis par l'utilisateur.
- */
 public class GenerateurMotDePasse {
 
     // Constantes : les caractères possibles pour chaque catégorie
@@ -16,19 +12,11 @@ public class GenerateurMotDePasse {
     // Générateur aléatoire sécurisé (meilleur que Random pour les mots de passe)
     private static final SecureRandom random = new SecureRandom();
 
-    /**
-     * Génère un mot de passe aléatoire selon les options choisies.
-     *
-     * @param longueur la longueur souhaitée du mot de passe
-     * @param avecMajuscules inclure des lettres majuscules
-     * @param avecChiffres inclure des chiffres
-     * @param avecSymboles inclure des symboles spéciaux
-     * @return le mot de passe généré
-     */
+   
     public static String genererMotDePasse(int longueur, boolean avecMajuscules,
                                             boolean avecChiffres, boolean avecSymboles) {
 
-        // On construit la liste des caractères disponibles selon les options
+        
         StringBuilder caracteresDisponibles = new StringBuilder(MINUSCULES);
 
         if (avecMajuscules) {
@@ -52,9 +40,7 @@ public class GenerateurMotDePasse {
         return motDePasse.toString();
     }
 
-    /**
-     * Point de départ du programme : interaction avec l'utilisateur.
-     */
+ 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
