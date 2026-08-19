@@ -12,11 +12,12 @@ public class GenerateurMotDePasse {
     // Générateur aléatoire sécurisé (meilleur que Random pour les mots de passe)
     private static final SecureRandom random = new SecureRandom();
 
-   
+    
     public static String genererMotDePasse(int longueur, boolean avecMajuscules,
                                             boolean avecChiffres, boolean avecSymboles) {
 
-        
+        // On construit la liste des caractères disponibles selon les options
+        // Les minuscules sont toujours incluses par defaut
         StringBuilder caracteresDisponibles = new StringBuilder(MINUSCULES);
 
         if (avecMajuscules) {
@@ -40,7 +41,6 @@ public class GenerateurMotDePasse {
         return motDePasse.toString();
     }
 
- 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
